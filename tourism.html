@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Sorsogon – Interactive Tourist Destinations Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-light">
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+      <div class="container-fluid px-4 max-width-container">
+        <a href="index.html" class="site-logo d-flex flex-column text-decoration-none">
+          <span class="logo-main">Sorsogon</span>
+          <span class="logo-sub">Province of the Philippines</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav nav-links gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tourism.html">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero position-relative d-flex align-items-end text-white overflow-hidden" style="height: 300px;">
+    <img src="images/2.png" alt="Explore Sorsogon" class="position-absolute w-100 h-100 object-fit-cover brightness-50" />
+    <div class="container position-relative z-1 p-4 mb-3 max-width-container">
+      <p class="hero-breadcrumb small text-uppercase tracking-wider text-gold-light mb-1"><a href="index.html" class="text-gold-light text-decoration-none">Home</a> / Destinations</p>
+      <h1 class="display-4 fw-bold text-white m-0">Explore Destinations</h1>
+    </div>
+  </section>
+
+  <main class="container py-5 max-width-container">
+
+    <!-- Search & Filter Bar -->
+    <div class="bg-white p-4 rounded shadow-sm mb-5">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label text-uppercase small fw-bold text-muted">Search Destinations</label>
+          <input type="text" id="searchInput" class="form-control" placeholder="Type destination name or municipality..." />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label text-uppercase small fw-bold text-muted">Filter by Category</label>
+          <select id="categoryFilter" class="form-select">
+            <option value="All">All Categories</option>
+            <option value="Beach">Beaches</option>
+            <option value="Mountain">Mountains</option>
+            <option value="Lake">Lakes &amp; Waterfalls</option>
+            <option value="Adventure">Eco-Adventure</option>
+            <option value="Wildlife">Wildlife</option>
+            <option value="Historical Site">Historical Sites</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destination Cards Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5" id="destinationsGrid"></div>
+
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-dark text-white border-0">
+          <h5 class="modal-title fw-bold" id="modalTitle">Destination Name</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img id="modalImage" src="" alt="" class="w-100 object-fit-cover" style="height: 350px;" />
+          <div class="p-4 p-md-5">
+            <span id="modalMeta" class="badge bg-info text-dark text-uppercase tracking-wider mb-3">Category | Municipality</span>
+            <p id="modalDesc" class="text-muted leading-relaxed mb-4"></p>
+            <div class="row g-3 bg-light p-3 rounded text-secondary small">
+              <div class="col-sm-6"><strong>Location:</strong> <span id="modalLocation"></span></div>
+              <div class="col-sm-6"><strong>Entrance Fee:</strong> <span id="modalFee"></span></div>
+              <div class="col-sm-6"><strong>Operating Hours:</strong> <span id="modalHours"></span></div>
+              <div class="col-sm-6"><strong>Best Time to Visit:</strong> <span id="modalBestTime"></span></div>
+            </div>
+            <div class="mt-4">
+              <h6 class="fw-bold text-dark mb-2">Activities &amp; Travel Tips:</h6>
+              <p id="modalActivities" class="small text-muted mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer pt-5 text-white-50">
+    <div class="container pt-3 max-width-container">
+      <div class="row g-4 mb-5">
+        <div class="col-xl-3 col-lg-12">
+          <a href="index.html" class="site-logo d-flex flex-column text-decoration-none mb-3">
+            <span class="logo-main text-white">Sorsogon</span>
+            <span class="logo-sub text-gold-light">Province of the Philippines</span>
+          </a>
+          <p class="small text-white-50">The southernmost province of Luzon, blessed with natural wonders, rich heritage, and warm, welcoming people.</p>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">All Destinations</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Beaches</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Mountains & Lakes</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Wildlife</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Culture</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Festivals</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Local Cuisine</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Souvenirs</a></li>
+            <li><a href="gallery.html" class="text-white-50 text-decoration-none">Photo Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Province Info</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="about.html" class="text-white-50 text-decoration-none">History</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Geography</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Government</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Economy</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-3 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Travel Help</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="hotels.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Transportation</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">FAQs</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact Desk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom py-3 border-top border-secondary d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+        <span>© 2026 Sorsogon Province.</span>
+        <span>Bicol Region, Philippines</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

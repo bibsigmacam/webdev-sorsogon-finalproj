@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery – Sorsogon Province</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .gallery-filter-btn { border-radius: 4px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.25s; }
+    .gallery-filter-btn.active { background-color: var(--color-gold); border-color: var(--color-gold); color: var(--color-earth-dark); }
+    .gallery-item-wrap { overflow: hidden; border-radius: 6px; cursor: pointer; position: relative; }
+    .gallery-item-wrap img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.45s ease, filter 0.35s ease; display: block; }
+    .gallery-item-wrap:hover img { transform: scale(1.08); filter: brightness(0.78); }
+    .gallery-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 12px; opacity: 0; transition: opacity 0.3s; pointer-events: none; background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%); }
+    .gallery-item-wrap:hover .gallery-overlay { opacity: 1; }
+    .gallery-caption { color: #fff; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; }
+    .gallery-hidden { display: none; }
+    /* Lightbox */
+    #lightboxModal .modal-content { background: #111; border: none; }
+    #lightboxModal .modal-body { padding: 0; position: relative; }
+    #lightboxModal img { max-height: 80vh; width: 100%; object-fit: contain; display: block; }
+    .lb-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 1.8rem; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; transition: background 0.2s; z-index: 10; display: flex; align-items: center; justify-content: center; }
+    .lb-nav-btn:hover { background: rgba(201,151,43,0.75); }
+    #lbPrev { left: 10px; }
+    #lbNext { right: 10px; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+      <div class="container-fluid px-4 max-width-container">
+        <a href="index.html" class="site-logo d-flex flex-column text-decoration-none">
+          <span class="logo-main">Sorsogon</span>
+          <span class="logo-sub">Province of the Philippines</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav nav-links gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="tourism.html">Tourism</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero position-relative d-flex align-items-end text-white overflow-hidden" style="height: 300px;">
+    <img src="images/Beaches of Sorsogon.png" alt="Sorsogon Gallery" class="position-absolute w-100 h-100 object-fit-cover" style="filter:brightness(0.45);" />
+    <div class="container position-relative z-1 p-4 mb-3 max-width-container">
+      <p class="hero-eyebrow small text-uppercase tracking-wider text-gold-light mb-1">
+        <a href="index.html" class="text-gold-light text-decoration-none">Home</a> / Gallery
+      </p>
+      <h1 class="display-4 fw-bold text-white m-0">Photo Gallery</h1>
+    </div>
+  </section>
+
+  <main class="py-5">
+    <div class="container max-width-container">
+
+      <!-- Intro -->
+      <div class="text-center mb-5">
+        <span class="section-label d-block text-uppercase fw-bold mb-2">Visual Journey</span>
+        <h2 class="fw-bold text-earth-dark">Sorsogon Through the Lens</h2>
+        <div class="mx-auto mb-3" style="width:60px; height:3px; background:var(--color-gold);"></div>
+        <p class="text-muted mx-auto" style="max-width:640px;">
+          Explore the stunning landscapes, vibrant festivals, marine wildlife, and rich cultural heritage of Sorsogon Province through our curated photo collection.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="d-flex flex-wrap gap-2 justify-content-center mb-4" id="galleryFilters">
+        <button class="btn btn-outline-secondary gallery-filter-btn active" data-filter="all">All Photos</button>
+        <button class="btn btn-outline-secondary gallery-filter-btn" data-filter="beaches">Beaches</button>
+        <button class="btn btn-outline-secondary gallery-filter-btn" data-filter="nature">Nature</button>
+        <button class="btn btn-outline-secondary gallery-filter-btn" data-filter="wildlife">Wildlife</button>
+        <button class="btn btn-outline-secondary gallery-filter-btn" data-filter="culture">Culture</button>
+        <button class="btn btn-outline-secondary gallery-filter-btn" data-filter="activities">Activities</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="row g-3" id="galleryGrid">
+        <!-- Beaches -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(0)">
+            <img src="images/70.png" alt="Subic Pink Sand Beach" />
+            <div class="gallery-overlay"><span class="gallery-caption">Subic Pink Sand Beach</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(1)">
+            <img src="images/71.png" alt="Punta Beach, Gubat" />
+            <div class="gallery-overlay"><span class="gallery-caption">Punta Beach, Gubat</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(2)">
+            <img src="images/72.png" alt="Rizal Beach Sunset" />
+            <div class="gallery-overlay"><span class="gallery-caption">Rizal Beach Sunset</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(3)">
+            <img src="images/73.png" alt="Tikling Island Cove" />
+            <div class="gallery-overlay"><span class="gallery-caption">Tikling Island Cove</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(4)">
+            <img src="images/74.png" alt="Juag Lagoon" />
+            <div class="gallery-overlay"><span class="gallery-caption">Juag Lagoon</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(5)">
+            <img src="images/Beaches of Sorsogon.png" alt="Sorsogon Coastline" />
+            <div class="gallery-overlay"><span class="gallery-caption">Sorsogon Coastline</span></div>
+          </div>
+        </div>
+        <!-- Nature -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(6)">
+            <img src="images/75.png" alt="Bulusan Volcano" />
+            <div class="gallery-overlay"><span class="gallery-caption">Bulusan Volcano</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(7)">
+            <img src="images/76.png" alt="Bulusan Crater Lake" />
+            <div class="gallery-overlay"><span class="gallery-caption">Bulusan Crater Lake</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(8)">
+            <img src="images/77.png" alt="Bulusan Mountain Range" />
+            <div class="gallery-overlay"><span class="gallery-caption">Bulusan Mountain Range</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(9)">
+            <img src="images/78.png" alt="San Benon Hot Spring" />
+            <div class="gallery-overlay"><span class="gallery-caption">San Benon Hot Spring</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(10)">
+            <img src="images/79.png" alt="Buhang Hot Spring" />
+            <div class="gallery-overlay"><span class="gallery-caption">Buhang Hot Spring</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(11)">
+            <img src="images/80.png" alt="Irosin Valley" />
+            <div class="gallery-overlay"><span class="gallery-caption">Irosin Valley</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(12)">
+            <img src="images/81.png" alt="Coastal Panorama" />
+            <div class="gallery-overlay"><span class="gallery-caption">Coastal Panorama</span></div>
+          </div>
+        </div>
+        <!-- Wildlife -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(13)">
+            <img src="images/82.png" alt="Whale Shark – Butanding" />
+            <div class="gallery-overlay"><span class="gallery-caption">Whale Shark – Butanding</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(14)">
+            <img src="images/83.png" alt="Manta Ray Encounter" />
+            <div class="gallery-overlay"><span class="gallery-caption">Manta Ray Encounter</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(15)">
+            <img src="images/84.png" alt="Sea Turtle Nesting" />
+            <div class="gallery-overlay"><span class="gallery-caption">Sea Turtle Nesting</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(16)">
+            <img src="images/85.png" alt="Firefly Watching, Donsol" />
+            <div class="gallery-overlay"><span class="gallery-caption">Firefly Watching, Donsol</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(17)">
+            <img src="images/86.png" alt="Marine Coral Reef" />
+            <div class="gallery-overlay"><span class="gallery-caption">Marine Coral Reef</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="wildlife">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(18)">
+            <img src="images/87.png" alt="Spinner Dolphins" />
+            <div class="gallery-overlay"><span class="gallery-caption">Spinner Dolphins</span></div>
+          </div>
+        </div>
+        <!-- Culture -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(19)">
+            <img src="images/kasanggayahan.png" alt="Kasanggayahan Festival" />
+            <div class="gallery-overlay"><span class="gallery-caption">Kasanggayahan Festival</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(20)">
+            <img src="images/88.png" alt="Pagdadawot Festival" />
+            <div class="gallery-overlay"><span class="gallery-caption">Pagdadawot Festival</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(21)">
+            <img src="images/89.png" alt="Barcelona Colonial Church" />
+            <div class="gallery-overlay"><span class="gallery-caption">Barcelona Colonial Church</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(22)">
+            <img src="images/90.png" alt="Sorsogon Cathedral" />
+            <div class="gallery-overlay"><span class="gallery-caption">Sorsogon Cathedral</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(23)">
+            <img src="images/91.png" alt="Local Cuisine – Bicolano Dishes" />
+            <div class="gallery-overlay"><span class="gallery-caption">Bicolano Cuisine</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(24)">
+            <img src="images/92.png" alt="Sorsogon Souvenirs" />
+            <div class="gallery-overlay"><span class="gallery-caption">Local Pasalubong</span></div>
+          </div>
+        </div>
+        <!-- Activities -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(25)">
+            <img src="images/93.png" alt="Island Hopping" />
+            <div class="gallery-overlay"><span class="gallery-caption">Island Hopping</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(26)">
+            <img src="images/94.png" alt="Surfing at Gubat" />
+            <div class="gallery-overlay"><span class="gallery-caption">Surfing at Gubat</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(27)">
+            <img src="images/95.png" alt="Volcano Trekking" />
+            <div class="gallery-overlay"><span class="gallery-caption">Volcano Trekking</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(28)">
+            <img src="images/96.png" alt="Kayaking – Bulusan Lake" />
+            <div class="gallery-overlay"><span class="gallery-caption">Kayaking – Bulusan Lake</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(29)">
+            <img src="images/97.png" alt="Snorkeling – Marine Sanctuary" />
+            <div class="gallery-overlay"><span class="gallery-caption">Snorkeling – Marine Sanctuary</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(30)">
+            <img src="images/98.png" alt="Ogod River Cruise" />
+            <div class="gallery-overlay"><span class="gallery-caption">Ogod River Cruise</span></div>
+          </div>
+        </div>
+        <!-- Extra nature/general -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(31)">
+            <img src="images/99.png" alt="Paguriran Lagoon" />
+            <div class="gallery-overlay"><span class="gallery-caption">Paguriran Lagoon</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="beaches">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(32)">
+            <img src="images/100.png" alt="Donsol Bay" />
+            <div class="gallery-overlay"><span class="gallery-caption">Donsol Bay</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(33)">
+            <img src="images/101.png" alt="Juban Highlands" />
+            <div class="gallery-overlay"><span class="gallery-caption">Juban Highlands</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="culture">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(34)">
+            <img src="images/102.png" alt="Bulan Church" />
+            <div class="gallery-overlay"><span class="gallery-caption">Bulan Church</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="activities">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(35)">
+            <img src="images/103.png" alt="Camping – Matnog" />
+            <div class="gallery-overlay"><span class="gallery-caption">Camping – Matnog</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 gallery-col" data-cat="nature">
+          <div class="gallery-item-wrap shadow-sm" onclick="openGalleryLightbox(36)">
+            <img src="images/104.png" alt="Sorsogon Rice Fields" />
+            <div class="gallery-overlay"><span class="gallery-caption">Sorsogon Rice Fields</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image count info -->
+      <p class="text-center text-muted mt-4 small" id="galleryCount">Showing all 36 photos</p>
+
+    </div>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body position-relative p-0">
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close" style="z-index:20;"></button>
+          <button class="lb-nav-btn" id="lbPrev" onclick="lbNavigate(-1)">&#8249;</button>
+          <img id="lightboxTargetImage" src="" alt="" />
+          <button class="lb-nav-btn" id="lbNext" onclick="lbNavigate(1)">&#8250;</button>
+          <div class="p-3 text-center">
+            <p id="lightboxCaption" class="text-white-50 small mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 text-white-50">
+    <div class="container pt-3 max-width-container">
+      <div class="row g-4 mb-5">
+        <div class="col-xl-3 col-lg-12 footer-brand">
+          <a href="index.html" class="site-logo d-flex flex-column text-decoration-none mb-3">
+            <span class="logo-main text-white">Sorsogon</span>
+            <span class="logo-sub text-gold-light">Province of the Philippines</span>
+          </a>
+          <p class="small text-white-50">The southernmost province of Luzon, blessed with natural wonders, rich heritage, and warm, welcoming people.</p>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Tourism</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Culture</a></li>
+            <li><a href="gallery.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+            <li><a href="hotels.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Information</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="about.html" class="text-white-50 text-decoration-none">About Sorsogon</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact & FAQs</a></li>
+            <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-4">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Tourism Office</h5>
+          <p class="small text-white-50 mb-1">📍 Rizal Street, Sorsogon City, Bicol, Philippines</p>
+          <p class="small text-white-50 mb-1">✉️ info@sorsogontourism.gov.ph</p>
+          <p class="small text-white-50">📞 (056) 211-0000</p>
+        </div>
+      </div>
+      <div class="footer-bottom py-3 border-top border-secondary d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+        <span>© 2026 Sorsogon Province.</span>
+        <span>Bicol Region, Philippines</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ── Gallery data array (mirrors the grid order) ──
+    const galleryImages = [
+      { src: "images/70.png", caption: "Subic Pink Sand Beach, Matnog" },
+      { src: "images/71.png", caption: "Punta Beach, Gubat" },
+      { src: "images/72.png", caption: "Rizal Beach Sunset, Gubat" },
+      { src: "images/73.png", caption: "Tikling Island Cove, Matnog" },
+      { src: "images/74.png", caption: "Juag Lagoon, Matnog" },
+      { src: "images/Beaches of Sorsogon.png", caption: "Sorsogon Coastline" },
+      { src: "images/75.png", caption: "Bulusan Volcano, Bulusan" },
+      { src: "images/76.png", caption: "Bulusan Crater Lake" },
+      { src: "images/77.png", caption: "Bulusan Mountain Range" },
+      { src: "images/78.png", caption: "San Benon Hot Spring, Bulusan Park" },
+      { src: "images/79.png", caption: "Buhang Hot Spring" },
+      { src: "images/80.png", caption: "Irosin Valley Viewpoint" },
+      { src: "images/81.png", caption: "Coastal Panorama, Sorsogon" },
+      { src: "images/82.png", caption: "Whale Shark (Butanding), Donsol" },
+      { src: "images/83.png", caption: "Manta Ray Encounter, Donsol Bay" },
+      { src: "images/84.png", caption: "Sea Turtle Nesting Beach" },
+      { src: "images/85.png", caption: "Firefly Watching – Ogod River, Donsol" },
+      { src: "images/86.png", caption: "Marine Coral Reef, Sorsogon Waters" },
+      { src: "images/87.png", caption: "Spinner Dolphins, Pacific Coast" },
+      { src: "images/kasanggayahan.png", caption: "Kasanggayahan Festival, Sorsogon City" },
+      { src: "images/88.png", caption: "Pagdadawot Festival, Donsol" },
+      { src: "images/89.png", caption: "Barcelona Colonial Church" },
+      { src: "images/90.png", caption: "Sorsogon Cathedral" },
+      { src: "images/91.png", caption: "Bicolano Local Cuisine" },
+      { src: "images/92.png", caption: "Local Pasalubong & Souvenirs" },
+      { src: "images/93.png", caption: "Island Hopping – Matnog" },
+      { src: "images/94.png", caption: "Surfing at Punta Beach, Gubat" },
+      { src: "images/95.png", caption: "Volcano Trekking – Bulusan" },
+      { src: "images/96.png", caption: "Kayaking – Bulusan Lake" },
+      { src: "images/97.png", caption: "Snorkeling – Marine Sanctuary" },
+      { src: "images/98.png", caption: "Ogod River Cruise, Donsol" },
+      { src: "images/99.png", caption: "Paguriran Island Lagoon" },
+      { src: "images/100.png", caption: "Donsol Bay Area" },
+      { src: "images/101.png", caption: "Juban Highlands" },
+      { src: "images/102.png", caption: "Bulan Church" },
+      { src: "images/103.png", caption: "Camping – Matnog Island" },
+      { src: "images/104.png", caption: "Sorsogon Rice Fields" }
+    ];
+
+    let currentLbIndex = 0;
+    let visibleIndices = galleryImages.map((_, i) => i); // track which indices are visible
+
+    function openGalleryLightbox(index) {
+      currentLbIndex = index;
+      updateLightboxImage();
+      const modal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+      modal.show();
+    }
+
+    function updateLightboxImage() {
+      const item = galleryImages[currentLbIndex];
+      document.getElementById('lightboxTargetImage').src = item.src;
+      document.getElementById('lightboxTargetImage').alt = item.caption;
+      document.getElementById('lightboxCaption').innerText = item.caption;
+    }
+
+    function lbNavigate(dir) {
+      // Navigate only within currently visible indices
+      const pos = visibleIndices.indexOf(currentLbIndex);
+      const newPos = (pos + dir + visibleIndices.length) % visibleIndices.length;
+      currentLbIndex = visibleIndices[newPos];
+      updateLightboxImage();
+    }
+
+    // ── Gallery Filter Logic ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const cols = document.querySelectorAll('.gallery-col');
+      const countEl = document.getElementById('galleryCount');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+          let shown = 0;
+          visibleIndices = [];
+
+          cols.forEach((col, i) => {
+            const match = filter === 'all' || col.dataset.cat === filter;
+            col.style.display = match ? '' : 'none';
+            if (match) {
+              shown++;
+              visibleIndices.push(i);
+            }
+          });
+
+          countEl.textContent = `Showing ${shown} photo${shown !== 1 ? 's' : ''}`;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

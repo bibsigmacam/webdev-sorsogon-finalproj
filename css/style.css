@@ -1,0 +1,268 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+:root {
+  --color-ocean:       #0a5c6e;
+  --color-ocean-mid:   #0e7a91;
+  --color-ocean-light: #2ea8bf;
+  --color-sand:        #f4ede2;
+  --color-sand-dark:   #e8d9c4;
+  --color-earth:       #8b5e3c;
+  --color-earth-dark:  #5c3d1e;
+  --color-green:       #2d6a4f;
+  --color-green-light: #52b788;
+  --color-gold:        #c9972b;
+  --color-gold-light:  #f0c354;
+  --color-white:       #ffffff;
+  --color-off-white:   #fafaf8;
+  --color-text:        #1e1e1e;
+  --color-text-muted:  #5a5a5a;
+  --color-border:      #d0c4b4;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Source Sans 3', 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-off-white);
+  color: var(--color-text);
+}
+
+.max-width-container {
+  max-width: 1180px !important;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, .logo-main, .accordion-button {
+  font-family: var(--font-display);
+}
+
+.text-earth-dark { color: var(--color-earth-dark); }
+.text-gold-light { color: var(--color-gold-light); }
+.tracking-wider { letter-spacing: 0.12em; }
+.cursor-pointer { cursor: pointer; }
+
+/* Navbar Overrides */
+.site-header {
+  background: var(--color-ocean) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+
+.logo-main {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: var(--color-gold-light);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nav-links a.nav-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82) !important;
+  padding: 8px 12px !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a.nav-link:hover, 
+.nav-links a.nav-link.active,
+.dropdown-item.active,
+.dropdown-item:hover {
+  background: var(--color-gold) !important;
+  color: var(--color-earth-dark) !important;
+}
+
+/* Home Hero Settings */
+.home-hero {
+  min-height: 85vh;
+}
+
+.home-hero-bg {
+  inset: 0;
+  background: linear-gradient(160deg, #062e38 0%, #0a5c6e 45%, #1a8fa0 100%);
+}
+
+.home-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600&q=80') center/cover no-repeat;
+  opacity: 0.22;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.btn-primary-custom {
+  background-color: var(--color-gold);
+  color: var(--color-earth-dark);
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201,151,43,0.4);
+}
+
+.btn-outline-custom {
+  border: 2px solid rgba(255,255,255,0.5);
+  color: var(--color-white);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--color-white);
+  background: rgba(255,255,255,0.12);
+  color: var(--color-white);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.5; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* Quick Stats Setup */
+.stat-strip {
+  background: var(--color-earth-dark);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-gold-light);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 6px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-ocean-mid);
+}
+
+.card-link {
+  color: var(--color-ocean);
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 2px;
+  font-size: 0.82rem;
+}
+
+.card-link:hover {
+  color: var(--color-earth);
+  border-color: var(--color-earth);
+}
+
+/* Image Hover Zoom Animation Utility */
+.transform-hover {
+  transition: transform 0.5s ease;
+}
+.transform-hover:hover {
+  transform: scale(1.04);
+}
+
+/* Sidebar Custom Content List Elements style definitions */
+.styled-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-size: 0.85rem;
+}
+
+/* Interactive Image Grid Gallery Styles */
+.gallery-item-wrap img {
+  transition: transform 0.4s ease;
+}
+.gallery-item-wrap:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.85);
+}
+
+/* Accordion Active Styling Adjustments */
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-sand) !important;
+  color: var(--color-earth-dark) !important;
+}
+
+/* Structural Sitemaps Shared Footer Layout Rules */
+.site-footer {
+  background-color: var(--color-earth-dark) !important;
+}
+
+
+/* Custom Additions for Project Requirements Sync */
+.max-h-75vh {
+  max-height: 75vh !important;
+  object-fit: contain;
+}
+.border-teal {
+  border-color: var(--color-ocean-mid) !important;
+}
+#inquiryForm .form-control:focus, #inquiryForm .form-select:focus {
+  border-color: var(--color-ocean-light);
+  box-shadow: 0 0 0 0.25rem rgba(46, 168, 191, 0.25);
+}
+
+/* === ADDITIONAL STYLING EXTENSIONS FOR STOREFRONT INTEGRATION=========== */
+
+.max-h-75vh {
+  max-height: 75vh !important;
+  object-fit: contain;
+}
+
+.border-teal {
+  border-color: var(--color-ocean-mid) !important;
+}
+
+#inquiryForm .form-control:focus, 
+#inquiryForm .form-select:focus {
+  border-color: var(--color-ocean-light);
+  box-shadow: 0 0 0 0.25rem rgba(46, 168, 191, 0.25);
+}
+
+.fs-8 {
+  font-size: 0.75rem !important;
+}

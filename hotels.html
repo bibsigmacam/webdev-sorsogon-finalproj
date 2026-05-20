@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels & Accommodation – Sorsogon Province</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hotel-card { border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; border: none; }
+    .hotel-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.13) !important; }
+    .hotel-card .card-img-top { height: 190px; object-fit: cover; }
+    .tier-badge { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 4px; }
+    .tier-premium { background: var(--color-gold-light); color: var(--color-earth-dark); }
+    .tier-mid { background: var(--color-ocean-light); color: #fff; }
+    .tier-budget { background: var(--color-green-light); color: #fff; }
+    .tier-eco { background: #a8d5b5; color: var(--color-earth-dark); }
+    .zone-card { border-left: 4px solid var(--color-ocean-mid); border-radius: 6px; transition: transform 0.25s; }
+    .zone-card:hover { transform: translateY(-3px); }
+    .section-divider { width: 60px; height: 3px; background: var(--color-gold); }
+    .star-rating { color: var(--color-gold); font-size: 0.85rem; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+      <div class="container-fluid px-4 max-width-container">
+        <a href="index.html" class="site-logo d-flex flex-column text-decoration-none">
+          <span class="logo-main">Sorsogon</span>
+          <span class="logo-sub">Province of the Philippines</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav nav-links gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="tourism.html">Tourism</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero position-relative d-flex align-items-end text-white overflow-hidden" style="height: 300px;">
+    <img src="images/37.png" alt="Hotels in Sorsogon" class="position-absolute w-100 h-100 object-fit-cover" style="filter:brightness(0.45);" />
+    <div class="container position-relative z-1 p-4 mb-3 max-width-container">
+      <p class="hero-eyebrow small text-uppercase tracking-wider text-gold-light mb-1">
+        <a href="index.html" class="text-gold-light text-decoration-none">Home</a> / Hotels
+      </p>
+      <h1 class="display-4 fw-bold text-white m-0">Hotels & Accommodation</h1>
+    </div>
+  </section>
+
+  <main>
+
+
+    <section class="py-5 bg-white">
+      <div class="container my-4 max-width-container">
+        <div class="text-center mb-5">
+          <span class="section-label d-block text-uppercase fw-bold mb-2">Stay in Sorsogon</span>
+          <h2 class="fw-bold text-earth-dark">Accommodation for Every Traveller</h2>
+          <div class="section-divider mx-auto mb-3"></div>
+          <p class="text-muted mx-auto" style="max-width:680px;">From comfortable city hotels in Sorsogon City to rustic eco-lodges in Donsol and beachside guesthouses in Matnog, the province offers accommodation suited to all budgets and travel styles.</p>
+        </div>
+
+        <!-- Zone Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+          <div class="col">
+            <div class="zone-card bg-white p-4 rounded h-100 shadow-sm">
+              <div class="fs-2 mb-2"></div>
+              <h5 class="fw-bold text-earth-dark">Capital Hotels</h5>
+              <p class="text-muted small mb-0">Full-service mid-range hotels, transit inns, and apartelles in Sorsogon City — perfect base for exploring the whole province.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="zone-card bg-white p-4 rounded h-100 shadow-sm">
+              <div class="fs-2 mb-2"></div>
+              <h5 class="fw-bold text-earth-dark">Donsol Eco-Lodges</h5>
+              <p class="text-muted small mb-0">Sustainable lodging near whale shark waters with integrated tour packages — wake up steps from the bay.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="zone-card bg-white p-4 rounded h-100 shadow-sm">
+              <div class="fs-2 mb-2"></div>
+              <h5 class="fw-bold text-earth-dark">Matnog Beach Camps</h5>
+              <p class="text-muted small mb-0">Budget-friendly beachside homestays and organized tent campgrounds for island-hopping adventurers.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="zone-card bg-white p-4 rounded h-100 shadow-sm">
+              <div class="fs-2 mb-2"></div>
+              <h5 class="fw-bold text-earth-dark">Mountain Retreats</h5>
+              <p class="text-muted small mb-0">Cool highland lodges near Irosin and Bulusan — ideal for volcano trekkers and nature lovers seeking fresh mountain air.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════SECTION 2: RECOMMENDED HOTELS (CARDS)══════ -->
+    <section class="py-5 bg-light">
+      <div class="container my-4 max-width-container">
+        <div class="text-center mb-5">
+          <span class="section-label d-block text-uppercase fw-bold mb-2">Curated Picks</span>
+          <h2 class="fw-bold text-earth-dark">Recommended Stays</h2>
+          <div class="section-divider mx-auto mb-3"></div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+          <!-- Hotel 1 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/38.png" class="card-img-top" alt="Fernandos Hotel Sorsogon" onerror="this.src='images/37.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Fernandos Hotel</h5>
+                  <span class="tier-badge tier-mid px-2 py-1">Mid-Range</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Sorsogon City</p>
+                <div class="star-rating mb-2">★★★☆☆</div>
+                <p class="text-muted small mb-3">A reliable choice in the city center with a swimming pool, full-service restaurant, air-conditioned conference facilities, and comfortable standard rooms.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded"> Pool</li>
+                  <li class="bg-light px-2 py-1 rounded">Restaurant</li>
+                  <li class="bg-light px-2 py-1 rounded"> A/C</li>
+                  <li class="bg-light px-2 py-1 rounded"> WiFi</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel 2 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/39.png" class="card-img-top" alt="Donsol Vista Lodge" onerror="this.src='images/37.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Donsol Vista Lodge</h5>
+                  <span class="tier-badge tier-eco px-2 py-1">Eco Lodge</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Donsol</p>
+                <div class="star-rating mb-2">★★★☆☆</div>
+                <p class="text-muted small mb-3">Eco-friendly lodge near the Donsol Visitors Center with integrated whale shark tour packages, rivermouth boardwalk access, and fan-cooled native rooms.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded"> Tour Packages</li>
+                  <li class="bg-light px-2 py-1 rounded"> Eco-Friendly</li>
+                  <li class="bg-light px-2 py-1 rounded"> Bay Access</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel 3 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/40.png" class="card-img-top" alt="Subic Cove Beach Resort" onerror="this.src='images/2.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Subic Cove Beach Resort</h5>
+                  <span class="tier-badge tier-budget px-2 py-1">Budget</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Matnog</p>
+                <div class="star-rating mb-2">★★☆☆☆</div>
+                <p class="text-muted small mb-3">Direct beachfront access and an on-site banca booking desk for island-hopping to Subic Beach, Tikling Island, and Juag Lagoon.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded"> Beach Access</li>
+                  <li class="bg-light px-2 py-1 rounded"> Banca Desk</li>
+                  <li class="bg-light px-2 py-1 rounded"> Camping</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel 4 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/41.png" class="card-img-top" alt="Gubat Beach Inn" onerror="this.src='images/3.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Gubat Beach Inn</h5>
+                  <span class="tier-badge tier-budget px-2 py-1">Budget</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Gubat</p>
+                <div class="star-rating mb-2">★★☆☆☆</div>
+                <p class="text-muted small mb-3">Close proximity to Punta surf breaks with surfboard rental and beginner lessons available. Great value for surfers spending multiple days at Gubat.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded"> Surf Nearby</li>
+                  <li class="bg-light px-2 py-1 rounded">Board Rental</li>
+                  <li class="bg-light px-2 py-1 rounded"> Beach View</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel 5 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/42.png" class="card-img-top" alt="Villa Kasanggayahan" onerror="this.src='images/37.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Villa Kasanggayahan</h5>
+                  <span class="tier-badge tier-mid px-2 py-1">Mid-Range</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Sorsogon City</p>
+                <div class="star-rating mb-2">★★★☆☆</div>
+                <p class="text-muted small mb-3">A comfortable city hotel popular during the Kasanggayahan Festival season. Offers spacious rooms, a garden terrace, and is walking distance from the city plaza.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded">Garden</li>
+                  <li class="bg-light px-2 py-1 rounded"> A/C</li>
+                  <li class="bg-light px-2 py-1 rounded">WiFi</li>
+                  <li class="bg-light px-2 py-1 rounded">City Center</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotel 6 -->
+          <div class="col">
+            <div class="card hotel-card shadow-sm h-100">
+              <img src="images/43.png" class="card-img-top" alt="Irosin Highland Lodge" onerror="this.src='images/Bulusan Mountain Range.png'" />
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="fw-bold text-earth-dark mb-0">Irosin Highland Lodge</h5>
+                  <span class="tier-badge tier-eco px-2 py-1">Eco Retreat</span>
+                </div>
+                <p class="small text-muted mb-1">📍 Irosin</p>
+                <div class="star-rating mb-2">★★★☆☆</div>
+                <p class="text-muted small mb-3">Nestled in the volcanic foothills near Bulusan Natural Park. Ideal for trekkers, birdwatchers, and those seeking cool highland air and natural hot spring access.</p>
+                <ul class="list-unstyled small text-muted d-flex flex-wrap gap-2 mb-0">
+                  <li class="bg-light px-2 py-1 rounded"> Park Access</li>
+                  <li class="bg-light px-2 py-1 rounded"> Hot Spring</li>
+                  <li class="bg-light px-2 py-1 rounded">Birdwatch</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SECTION 3: FULL REFERENCE TABLE
+    ══════════════════════════════════════════ -->
+    <section class="py-5 bg-white">
+      <div class="container my-4 max-width-container">
+        <h3 class="fw-bold text-earth-dark mb-4 text-center">Full Accommodation Reference Matrix</h3>
+        <div class="table-responsive bg-white rounded border shadow-sm">
+          <table class="table table-hover align-middle mb-0 small">
+            <thead class="table-dark text-uppercase" style="font-size:0.75rem;">
+              <tr>
+                <th class="p-3">Establishment</th>
+                <th class="p-3">Location</th>
+                <th class="p-3">Tier</th>
+                <th class="p-3">Price Range</th>
+                <th class="p-3">Highlights</th>
+              </tr>
+            </thead>
+            <tbody class="text-muted">
+              <tr><td class="p-3 fw-semibold text-dark">Fernandos Hotel</td><td class="p-3">Sorsogon City</td><td class="p-3"><span class="tier-badge tier-mid px-2 py-1">Mid-Range</span></td><td class="p-3">₱1,500–₱3,000/night</td><td class="p-3">Pool, restaurant, conference rooms, A/C</td></tr>
+              <tr><td class="p-3 fw-semibold text-dark">Villa Kasanggayahan</td><td class="p-3">Sorsogon City</td><td class="p-3"><span class="tier-badge tier-mid px-2 py-1">Mid-Range</span></td><td class="p-3">₱1,200–₱2,500/night</td><td class="p-3">Garden terrace, city center, WiFi</td></tr>
+              <tr><td class="p-3 fw-semibold text-dark">Donsol Vista Lodge</td><td class="p-3">Donsol</td><td class="p-3"><span class="tier-badge tier-eco px-2 py-1">Eco Lodge</span></td><td class="p-3">₱600–₱1,500/night</td><td class="p-3">Whale shark tours, bay access, eco-friendly</td></tr>
+              <tr><td class="p-3 fw-semibold text-dark">Subic Cove Beach Resort</td><td class="p-3">Matnog</td><td class="p-3"><span class="tier-badge tier-budget px-2 py-1">Budget</span></td><td class="p-3">₱400–₱1,000/night</td><td class="p-3">Beachfront, banca desk, camping area</td></tr>
+              <tr><td class="p-3 fw-semibold text-dark">Gubat Beach Inn</td><td class="p-3">Gubat</td><td class="p-3"><span class="tier-badge tier-budget px-2 py-1">Budget</span></td><td class="p-3">₱500–₱1,200/night</td><td class="p-3">Near Punta surf, board rental, budget-friendly</td></tr>
+              <tr><td class="p-3 fw-semibold text-dark">Irosin Highland Lodge</td><td class="p-3">Irosin</td><td class="p-3"><span class="tier-badge tier-eco px-2 py-1">Eco Retreat</span></td><td class="p-3">₱800–₱1,800/night</td><td class="p-3">Hot spring access, Bulusan Park gateway, birdwatching</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Booking Notice -->
+        <div class="callout border-start border-4 border-warning p-4 bg-light rounded shadow-sm mt-5">
+          <h5 class="fw-bold text-warning-emphasis">📅 Strategic Booking Notice</h5>
+          <p class="text-muted small mb-0">During peak whale shark months (<strong>February–April</strong>) and the Kasanggayahan Festival season (<strong>October</strong>), accommodations across all zones book up rapidly. Secure reservations <strong>4–6 weeks in advance</strong>. Contact the tourism office for official lodging referrals and package rates.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-5">
+          <p class="text-muted mb-3">Ready to plan your stay? Send us your travel dates and preferred zone.</p>
+          <a href="contact.html" class="btn btn-primary-custom px-5 py-3 text-uppercase fw-bold">Make an Inquiry</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 text-white-50">
+    <div class="container pt-3 max-width-container">
+      <div class="row g-4 mb-5">
+        <div class="col-xl-3 col-lg-12 footer-brand">
+          <a href="index.html" class="site-logo d-flex flex-column text-decoration-none mb-3">
+            <span class="logo-main text-white">Sorsogon</span>
+            <span class="logo-sub text-gold-light">Province of the Philippines</span>
+          </a>
+          <p class="small text-white-50">The southernmost province of Luzon, blessed with natural wonders, rich heritage, and warm, welcoming people.</p>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Tourism</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Culture</a></li>
+            <li><a href="gallery.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+            <li><a href="hotels.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Information</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="about.html" class="text-white-50 text-decoration-none">About Sorsogon</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact & FAQs</a></li>
+            <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-4">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Tourism Office</h5>
+          <p class="small text-white-50 mb-1">📍 Rizal Street, Sorsogon City, Bicol, Philippines</p>
+          <p class="small text-white-50 mb-1">✉️ info@sorsogontourism.gov.ph</p>
+          <p class="small text-white-50">📞 (056) 211-0000</p>
+        </div>
+      </div>
+      <div class="footer-bottom py-3 border-top border-secondary d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+        <span>© 2026 Sorsogon Province.</span>
+        <span>Bicol Region, Philippines</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

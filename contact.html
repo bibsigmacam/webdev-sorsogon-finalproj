@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Travel Info – Sorsogon Province</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .transport-card { border-top: 3px solid var(--color-ocean-mid); border-radius: 6px; transition: transform 0.25s; }
+    .transport-card:hover { transform: translateY(-3px); }
+    .faq-section .accordion-button { font-family: var(--font-display); font-size: 1rem; }
+    .faq-section .accordion-button:not(.collapsed) { background-color: var(--color-sand) !important; color: var(--color-earth-dark) !important; box-shadow: none; }
+    .section-divider { width: 60px; height: 3px; background: var(--color-gold); }
+    .tip-card { border-left: 4px solid var(--color-green-light); background: #f8fffe; border-radius: 6px; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+      <div class="container-fluid px-4 max-width-container">
+        <a href="index.html" class="site-logo d-flex flex-column text-decoration-none">
+          <span class="logo-main">Sorsogon</span>
+          <span class="logo-sub">Province of the Philippines</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav nav-links gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="tourism.html">Tourism</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero position-relative d-flex align-items-end text-white overflow-hidden" style="height: 300px;">
+    <img src="images/37.png" alt="Contact Sorsogon Tourism" class="position-absolute w-100 h-100 object-fit-cover" style="filter:brightness(0.45);" />
+    <div class="container position-relative z-1 p-4 mb-3 max-width-container">
+      <p class="hero-eyebrow small text-uppercase tracking-wider text-gold-light mb-1">
+        <a href="index.html" class="text-gold-light text-decoration-none">Home</a> / Contact
+      </p>
+      <h1 class="display-4 fw-bold text-white m-0">Contact & Travel Info</h1>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ══SECTION 1: CONTACT FORM + DETAILS═══ -->
+    <section class="py-5 bg-white">
+      <div class="container my-4 max-width-container">
+        <div class="row g-5">
+
+          <!-- Left: Contact Info -->
+          <div class="col-lg-5">
+            <span class="section-label d-block text-uppercase fw-bold mb-2">Planning Desk</span>
+            <h2 class="fw-bold text-earth-dark mb-4">Get in Touch</h2>
+            <p class="text-muted mb-4">Have questions about logistics, seasonal openings, or municipal permits for backcountry trekking? Send us your travel specifics and our local tourism officers will assist you.</p>
+
+            <div class="d-flex align-items-start gap-3 mb-3 bg-light p-3 rounded shadow-sm">
+              <div class="fs-3">📍</div>
+              <div>
+                <strong class="d-block text-dark small text-uppercase">Tourism Operations</strong>
+                <span class="small text-muted">Rizal Street, Sorsogon City, Bicol, Philippines</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3 bg-light p-3 rounded shadow-sm">
+              <div class="fs-3">✉️</div>
+              <div>
+                <strong class="d-block text-dark small text-uppercase">Email</strong>
+                <span class="small text-muted">info@sorsogontourism.gov.ph</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3 bg-light p-3 rounded shadow-sm">
+              <div class="fs-3">📞</div>
+              <div>
+                <strong class="d-block text-dark small text-uppercase">Phone</strong>
+                <span class="small text-muted">(056) 211-0000 | (056) 421-1234</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3 bg-light p-3 rounded shadow-sm">
+              <div class="fs-3">🕐</div>
+              <div>
+                <strong class="d-block text-dark small text-uppercase">Office Hours</strong>
+                <span class="small text-muted">Monday–Friday, 8:00 AM – 5:00 PM</span>
+              </div>
+            </div>
+
+            <!-- Travel Tips -->
+            <div class="tip-card p-4 mt-4">
+              <h5 class="fw-bold text-earth-dark mb-3">✅ Quick Travel Tips</h5>
+              <ul class="list-unstyled d-flex flex-column gap-2 small text-muted mb-0">
+                <li>🌊 Best whale shark season: <strong>November–June</strong> (peak: Feb–Apr)</li>
+                <li>🌤️ Dry season: <strong>March–May</strong> — ideal for beaches</li>
+                <li>🎉 Kasanggayahan Festival: <strong>October</strong> — book early!</li>
+                <li>🧴 Bring reef-safe sunscreen for marine areas</li>
+                <li>💧 Carry cash — some municipalities are remote</li>
+                <li>🌋 Check PHIVOLCS before trekking Bulusan Volcano</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Inquiry Form -->
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-sm p-4 p-md-5 bg-white">
+              <h4 class="fw-bold text-earth-dark mb-4">Travel Inquiry & Booking Form</h4>
+
+              <form id="inquiryForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Full Name</label>
+                    <input type="text" class="form-control" id="formFullName" placeholder="Juan Dela Cruz" required />
+                    <div class="invalid-feedback">Full name is required.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Email Address</label>
+                    <input type="email" class="form-control" id="formEmail" placeholder="juan@example.com" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Contact Number</label>
+                    <input type="text" class="form-control" id="formContact" placeholder="09171234567" required />
+                    <div class="invalid-feedback">Numbers only (e.g. 09171234567).</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Destination of Interest</label>
+                    <select class="form-select" id="formDestination" required>
+                      <option value="">-- Select a destination --</option>
+                      <option value="Donsol">Donsol Whale Shark Sanctuary</option>
+                      <option value="Bulusan Lake">Bulusan Crater Lake & Volcano Park</option>
+                      <option value="Subic Beach">Subic Pink Sand Beach, Matnog</option>
+                      <option value="Paguriran">Paguriran Island Lagoon</option>
+                      <option value="Barcelona Church">Barcelona Colonial Church</option>
+                      <option value="Punta Beach">Punta Beach, Gubat</option>
+                      <option value="Tikling Island">Tikling Island</option>
+                      <option value="Multiple">Multiple Destinations / Itinerary</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a destination.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Expected Travel Date</label>
+                    <input type="date" class="form-control" id="formTravelDate" required />
+                    <div class="invalid-feedback">Travel date is required.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Number of Visitors</label>
+                    <input type="number" class="form-control" id="formVisitors" min="1" value="1" required />
+                    <div class="invalid-feedback">Must be at least 1 visitor.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Your Message / Special Requests</label>
+                    <textarea class="form-control" id="formMessage" rows="4" placeholder="Tell us about your trip goals, accessibility needs, or special requests..." required></textarea>
+                    <div class="invalid-feedback">Please include a message so we can assist you properly.</div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <button type="submit" class="btn btn-primary-custom w-100 py-3 text-uppercase fw-bold">Submit Inquiry</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ SECTION 2: TRANSPORTATION GUIDE═════ -->
+    <section class="py-5 bg-light">
+      <div class="container my-4 max-width-container">
+        <div class="text-center mb-5">
+          <span class="section-label d-block text-uppercase fw-bold mb-2">Getting Here & Around</span>
+          <h2 class="fw-bold text-earth-dark">Transportation Guide</h2>
+          <div class="section-divider mx-auto mb-3"></div>
+          <p class="text-muted mx-auto" style="max-width:680px;">Sorsogon is accessible from Manila and other major cities by land and sea. Within the province, a combination of buses, jeepneys, tricycles, and boats link all municipal destinations.</p>
+        </div>
+
+        <!-- How to Get Here -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+          <div class="col">
+            <div class="bg-white p-4 rounded h-100 shadow-sm transport-card">
+              <div class="fs-2 mb-2">🚌</div>
+              <h6 class="fw-bold text-earth-dark">Long-Haul Bus</h6>
+              <p class="text-muted small mb-0">Air-conditioned overnight sleeper buses depart from Pasay/Cubao terminals in Manila. Travel time is approximately 12–14 hours direct to Sorsogon City.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-white p-4 rounded h-100 shadow-sm transport-card">
+              <div class="fs-2 mb-2">✈️</div>
+              <h6 class="fw-bold text-earth-dark">By Air</h6>
+              <p class="text-muted small mb-0">Nearest airport: Bicol International Airport (LPA) in Daraga, Albay — approximately 75 km north of Sorsogon City. Take a van or bus from Legazpi.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-white p-4 rounded h-100 shadow-sm transport-card">
+              <div class="fs-2 mb-2">🚗</div>
+              <h6 class="fw-bold text-earth-dark">Private Vehicle</h6>
+              <p class="text-muted small mb-0">Drive via the South Luzon Expressway (SLEX) connecting to the Maharlika Highway. Estimated 10–12 hours from Metro Manila depending on traffic.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="bg-white p-4 rounded h-100 shadow-sm transport-card">
+              <div class="fs-2 mb-2">⛴️</div>
+              <h6 class="fw-bold text-earth-dark">RORO Ferry</h6>
+              <p class="text-muted small mb-0">Matnog Port operates RORO ferries to Northern Samar — the national gateway connecting Luzon to the Visayas island chain.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internal Transport -->
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6">
+            <h4 class="fw-bold text-earth-dark mb-4">Getting Around Within Sorsogon</h4>
+            <div class="d-flex flex-column gap-3">
+              <div class="bg-white p-4 rounded shadow-sm">
+                <h6 class="fw-bold text-ocean mb-1">🚐 Public Jeepneys & Vans</h6>
+                <p class="text-muted small mb-0">The main regional transit. Regular jeepney and express van routes depart from Sorsogon City's integrated terminal to all 14 municipalities including Donsol, Gubat, Matnog, and Bulusan.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm">
+                <h6 class="fw-bold text-ocean mb-1">🛺 Motorized Tricycles</h6>
+                <p class="text-muted small mb-0">Ideal for short door-to-door hops within town centers. Always agree on the fare before boarding. Standard rate is ₱10–15 per person for local trips.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm">
+                <h6 class="fw-bold text-ocean mb-1">⛵ Banca (Outrigger Boat)</h6>
+                <p class="text-muted small mb-0">Essential for reaching Subic Beach, Tikling Island, Paguriran Lagoon, and whale shark trips in Donsol. Charter rates are regulated by the local tourism office.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h4 class="fw-bold text-earth-dark mb-4">Distance from Sorsogon City</h4>
+            <div class="table-responsive bg-white rounded border shadow-sm">
+              <table class="table table-hover align-middle mb-0 small">
+                <thead class="table-dark text-uppercase" style="font-size:0.75rem;">
+                  <tr>
+                    <th class="p-3">Destination</th>
+                    <th class="p-3">Distance</th>
+                    <th class="p-3">Est. Travel Time</th>
+                  </tr>
+                </thead>
+                <tbody class="text-muted">
+                  <tr><td class="p-3 fw-semibold text-dark">Donsol</td><td class="p-3">~56 km</td><td class="p-3">~1.5 hours</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Gubat (Punta Beach)</td><td class="p-3">~23 km</td><td class="p-3">~45 minutes</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Matnog (Subic Beach)</td><td class="p-3">~64 km</td><td class="p-3">~2 hours + boat</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Bulusan</td><td class="p-3">~54 km</td><td class="p-3">~1.5 hours</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Irosin</td><td class="p-3">~45 km</td><td class="p-3">~1.5 hours</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Barcelona</td><td class="p-3">~27 km</td><td class="p-3">~50 minutes</td></tr>
+                  <tr><td class="p-3 fw-semibold text-dark">Legazpi City (Albay)</td><td class="p-3">~75 km</td><td class="p-3">~2 hours</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════  SECTION 3: FREQUENTLY ASKED QUESTIONS════════════ -->
+    <section class="py-5 bg-white faq-section">
+      <div class="container my-4 max-width-container">
+        <div class="text-center mb-5">
+          <span class="section-label d-block text-uppercase fw-bold mb-2">Need Answers?</span>
+          <h2 class="fw-bold text-earth-dark">Frequently Asked Questions</h2>
+          <div class="section-divider mx-auto mb-3"></div>
+          <p class="text-muted mx-auto" style="max-width:600px;">Common questions from travelers planning a visit to Sorsogon Province.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="accordion shadow-sm rounded overflow-hidden" id="faqAccordion">
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                    Is it safe to swim and interact with whale sharks in Donsol?
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    Yes. Donsol whale shark interactions are closely managed under strict eco-tourism guidelines developed with the WWF-Philippines. Only snorkeling is permitted — no scuba diving. A trained Butanding Interaction Officer (BIO) is assigned to every boat to ensure safe and responsible encounters. Touching, riding, or flash photography is strictly prohibited.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    How do I travel between municipalities from Sorsogon City?
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    Sorsogon City serves as the central transport hub. Public jeepneys and express passenger vans depart regularly from the integrated city terminal to all towns including Gubat, Donsol, Matnog, and Bulusan. For short hops within any town center, motorized tricycles are widely available and affordable.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Are there entrance fees for Subic Beach or Bulusan Natural Park?
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    Yes, nominal environmental and maintenance fees apply at most eco-zones. Bulusan Lake charges approximately ₱50 per visitor, plus kayak rental fees. Subic Beach in Matnog requires a regulated banca charter from Matnog Port — rates are set by the local tourism office. Always carry cash as ATMs can be limited in remote areas.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    What is the best time of year to visit Sorsogon?
+                  </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    The dry season from <strong>March to May</strong> is ideal for beaches and outdoor activities. For whale shark encounters, the peak season is <strong>February to April</strong>, though sightings occur November through June. The Kasanggayahan Festival in <strong>October</strong> is a great time to experience local culture. Avoid typhoon months (July–September) for water-based activities.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    Is Bulusan Volcano safe to trek?
+                  </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    Trekking is permitted when PHIVOLCS (Philippine Institute of Volcanology and Seismology) declares Alert Level 0. Always check the current advisory before visiting. When trekking is allowed, you must obtain permits from the Protected Area Office in Irosin and hire a registered local guide. The volcano is permanently monitored and local authorities respond quickly to any changes in activity.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                    What electrical standard is used in Sorsogon?
+                  </button>
+                </h2>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    The Philippines uses <strong>220V AC at 60Hz</strong>. Standard plug types are flat two-pin (Type A) and three-pin (Type B). If your devices are rated for 110V, you will need a step-down voltage converter. Most hotels and lodges in Sorsogon City have standard outlets; remote eco-lodges may have limited power supply.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                    Are there ATMs or banks in Sorsogon?
+                  </button>
+                </h2>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body bg-white text-muted small">
+                    Yes, Sorsogon City has multiple ATMs from major Philippine banks (BDO, BPI, Landbank, Metrobank). Donsol and Gubat also have ATMs. However, remote municipalities like Matnog and Bulusan have limited or no ATM access — always carry sufficient cash before heading to island or mountain destinations.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 text-white-50">
+    <div class="container pt-3 max-width-container">
+      <div class="row g-4 mb-5">
+        <div class="col-xl-3 col-lg-12 footer-brand">
+          <a href="index.html" class="site-logo d-flex flex-column text-decoration-none mb-3">
+            <span class="logo-main text-white">Sorsogon</span>
+            <span class="logo-sub text-gold-light">Province of the Philippines</span>
+          </a>
+          <p class="small text-white-50">The southernmost province of Luzon, blessed with natural wonders, rich heritage, and warm, welcoming people.</p>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Tourism</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Culture</a></li>
+            <li><a href="gallery.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+            <li><a href="hotels.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Information</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="about.html" class="text-white-50 text-decoration-none">About Sorsogon</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact & FAQs</a></li>
+            <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-4">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Tourism Office</h5>
+          <p class="small text-white-50 mb-1">📍 Rizal Street, Sorsogon City, Bicol, Philippines</p>
+          <p class="small text-white-50 mb-1">✉️ info@sorsogontourism.gov.ph</p>
+          <p class="small text-white-50">📞 (056) 211-0000</p>
+        </div>
+      </div>
+      <div class="footer-bottom py-3 border-top border-secondary d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+        <span>© 2026 Sorsogon Province.</span>
+        <span>Bicol Region, Philippines</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

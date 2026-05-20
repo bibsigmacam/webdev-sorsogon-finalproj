@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Sorsogon – Province Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-light">
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-2">
+      <div class="container-fluid px-4 max-width-container">
+        <a href="index.html" class="site-logo d-flex flex-column text-decoration-none">
+          <span class="logo-main">Sorsogon</span>
+          <span class="logo-sub">Province of the Philippines</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <ul class="navbar-nav nav-links gap-lg-1 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="tourism.html">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero position-relative d-flex align-items-end text-white overflow-hidden" style="height: 300px;">
+    <img src="images/33.png" alt="About Sorsogon" class="position-absolute w-100 h-100 object-fit-cover brightness-50" />
+    <div class="container position-relative z-1 p-4 mb-3 max-width-container">
+      <p class="hero-breadcrumb small text-uppercase tracking-wider text-gold-light mb-1"><a href="index.html" class="text-gold-light text-decoration-none">Home</a> / About</p>
+      <h1 class="display-4 fw-bold text-white m-0">About Sorsogon</h1>
+    </div>
+  </section>
+
+  <main>
+    <!-- Tab Navigation -->
+    <div class="bg-white border-bottom sticky-top" style="top: 56px; z-index: 100;">
+      <div class="container max-width-container">
+        <ul class="nav nav-tabs border-0 flex-nowrap overflow-auto" id="aboutTabs" role="tablist" style="gap: 0;">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active px-4 py-3 fw-bold text-uppercase small" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button">Overview</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-3 fw-bold text-uppercase small" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button">History</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-3 fw-bold text-uppercase small" id="geography-tab" data-bs-toggle="tab" data-bs-target="#geography" type="button">Geography</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-3 fw-bold text-uppercase small" id="government-tab" data-bs-toggle="tab" data-bs-target="#government" type="button">Government</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-3 fw-bold text-uppercase small" id="economy-tab" data-bs-toggle="tab" data-bs-target="#economy" type="button">Economy</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link px-4 py-3 fw-bold text-uppercase small" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button">Education</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content">
+
+      <!-- OVERVIEW TAB -->
+      <div class="tab-pane fade show active" id="profile" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Province Profile</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Sorsogon at a Glance</h2>
+                <p class="text-muted">Sorsogon is the southernmost province of Luzon, the largest island in the Philippines. Nestled at the tip of the Bicol Peninsula and bounded by the Pacific Ocean to the east, San Bernardino Strait to the south, and the Ticao Pass to the west, it is a land of unmatched natural beauty.</p>
+                <p class="text-muted mb-0">The province is home to 14 municipalities and 2 component cities, with a population of over 800,000 people known as Sorsoganons. The capital is Sorsogon City, the primary commercial and administrative center.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/Coastal view of Sorsogon.png" alt="Sorsogon Province" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-4 bg-light">
+          <div class="container max-width-container">
+            <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+              <div class="col"><div class="bg-white p-4 rounded shadow-sm"><div class="stat-num">2,118</div><div class="stat-label">km² Land Area</div></div></div>
+              <div class="col"><div class="bg-white p-4 rounded shadow-sm"><div class="stat-num">800K+</div><div class="stat-label">Population</div></div></div>
+              <div class="col"><div class="bg-white p-4 rounded shadow-sm"><div class="stat-num">16</div><div class="stat-label">Cities & Towns</div></div></div>
+              <div class="col"><div class="bg-white p-4 rounded shadow-sm"><div class="stat-num">97%+</div><div class="stat-label">Literacy Rate</div></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- HISTORY TAB -->
+      <div class="tab-pane fade" id="history" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Origins</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Roots of a Province</h2>
+                <p class="text-muted">The name "Sorsogon" is derived from the Bikol word <em>surusuog</em>, meaning "a place often visited by strangers" — a fitting name for a land that has been a crossroads of peoples and cultures for centuries. Long before Spanish colonizers arrived, the area was inhabited by indigenous Aeta and Malay-descended Bisaya peoples.</p>
+                <p class="text-muted mb-0">Early settlements thrived along the rich coastal areas, sustained by fishing, trade, and agriculture. The province's strategic location at the southern tip of Luzon made it a natural waypoint for traders, explorers, and missionaries.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/34.png" alt="Old Sorsogon church" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-light">
+          <div class="container my-4 max-width-container" style="max-width: 900px !important;">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Timeline</span>
+              <h2 class="fw-bold text-earth-dark">Key Historical Events</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="d-flex flex-column gap-4">
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">Pre-16th Century</p>
+                <h5 class="fw-bold text-dark mb-2">Indigenous Settlements</h5>
+                <p class="text-muted small mb-0">The region is home to Aeta (Agta) communities and Malay settlers who established coastal barangays. Trade with Chinese merchants and neighboring Visayan islands was already flourishing.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">1569</p>
+                <h5 class="fw-bold text-dark mb-2">Spanish Colonization Begins</h5>
+                <p class="text-muted small mb-0">Spanish conquistadors led by Miguel López de Legazpi began consolidating control over Bicol. Franciscan and Augustinian missionaries followed, establishing missions and the first Christian communities.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">1636</p>
+                <h5 class="fw-bold text-dark mb-2">Establishment as a Province</h5>
+                <p class="text-muted small mb-0">Sorsogon was formally established as a separate administrative province under Spanish colonial rule, carved out from the larger Camarines province.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">1898</p>
+                <h5 class="fw-bold text-dark mb-2">Philippine Revolution</h5>
+                <p class="text-muted small mb-0">Following the Philippine Revolution against Spain, Sorsogon became part of the newly proclaimed Philippine Republic under Emilio Aguinaldo. Local heroes played a significant role in the regional resistance.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">1941–1945</p>
+                <h5 class="fw-bold text-dark mb-2">World War II</h5>
+                <p class="text-muted small mb-0">Japanese forces occupied Sorsogon. The province saw intense guerrilla activity, and many towns sustained significant damage during the liberation campaign in 1945.</p>
+              </div>
+              <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-info">
+                <p class="text-primary fw-bold mb-1 small text-uppercase">2000 & 2001</p>
+                <h5 class="fw-bold text-dark mb-2">Modern Milestones</h5>
+                <p class="text-muted small mb-0">The capital town of Sorsogon was converted into a component city (RA 8806). In 2001, Donsol gained international fame when the WWF endorsed its whale shark tourism program as a global model for responsible wildlife tourism.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Heritage</span>
+              <h2 class="fw-bold text-earth-dark">Colonial Legacy &amp; Heritage Sites</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <article class="card border-0 shadow-sm h-100 overflow-hidden transform-hover">
+                  <img src="images/35.png" alt="Heritage church" class="card-img-top object-fit-cover" style="height: 200px;" />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <p class="card-label small text-uppercase fw-bold text-info mb-1">Architecture</p>
+                    <h3 class="fw-bold text-earth-dark h5 mb-2">Colonial Churches</h3>
+                    <p class="text-muted small flex-grow-1">Spanish-era churches stand as enduring symbols of the province's Catholic faith, many dating to the 17th and 18th centuries.</p>
+                    <a href="tourism.html" class="card-link text-uppercase fw-bold text-decoration-none mt-3 align-self-start">View Churches →</a>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card border-0 shadow-sm h-100 overflow-hidden transform-hover">
+                  <img src="images/27.png" alt="Festival heritage" class="card-img-top object-fit-cover" style="height: 200px;" />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <p class="card-label small text-uppercase fw-bold text-info mb-1">Tradition</p>
+                    <h3 class="fw-bold text-earth-dark h5 mb-2">Living Culture</h3>
+                    <p class="text-muted small flex-grow-1">Indigenous traditions blend with colonial-era customs in Sorsogon's vibrant festival culture, kept alive through generations.</p>
+                    <a href="culture.html" class="card-link text-uppercase fw-bold text-decoration-none mt-3 align-self-start">Explore Culture →</a>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card border-0 shadow-sm h-100 overflow-hidden transform-hover">
+                  <img src="images/36.png" alt="Natural heritage" class="card-img-top object-fit-cover" style="height: 200px;" />
+                  <div class="card-body p-4 d-flex flex-column">
+                    <p class="card-label small text-uppercase fw-bold text-info mb-1">Natural Heritage</p>
+                    <h3 class="fw-bold text-earth-dark h5 mb-2">Protected Landscapes</h3>
+                    <p class="text-muted small flex-grow-1">The Bulusan Volcano Natural Park and coastal marine sanctuaries preserve the province's extraordinary biodiversity.</p>
+                    <a href="tourism.html" class="card-link text-uppercase fw-bold text-decoration-none mt-3 align-self-start">View Wildlife →</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- GEOGRAPHY TAB -->
+      <div class="tab-pane fade" id="geography" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Location &amp; Terrain</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Where Land Meets Sea</h2>
+                <p class="text-muted">Sorsogon occupies the southernmost tip of Luzon. It is bounded to the north by Albay Province, to the east by the Pacific Ocean, to the south by the San Bernardino Strait, and to the west by the Ticao Pass and Burias Pass.</p>
+                <p class="text-muted">The province covers approximately <strong>2,140 square kilometers</strong>. Its terrain is varied — from volcanic mountains in the interior to extensive coastal plains and a deeply indented coastline stretching over 200 kilometers.</p>
+                <p class="text-muted mb-0">Sorsogon is home to the active <strong>Bulusan Volcano</strong>, which rises to 1,565 meters above sea level. The interior highlands are blanketed in dense tropical rainforest, harboring exceptional biodiversity.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/29.png" alt="Sorsogon geography" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-light">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Physical Features</span>
+              <h2 class="fw-bold text-earth-dark">Geographic Data Matrix</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="table-responsive rounded shadow-sm bg-white">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.05em;">
+                  <tr><th class="p-3">Geographic Feature</th><th class="p-3">Technical Detail</th><th class="p-3">Notes</th></tr>
+                </thead>
+                <tbody class="text-muted small">
+                  <tr><td class="p-3 fw-bold text-dark">Total Land Area</td><td class="p-3">2,140 km²</td><td class="p-3">Includes major close-shore island groups.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Highest Point</td><td class="p-3">Bulusan Volcano — 1,565 m</td><td class="p-3">Active stratovolcano ecosystem.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Coastline Length</td><td class="p-3">~200 km</td><td class="p-3">Spans Pacific Ocean and San Bernardino borders.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Administrative Units</td><td class="p-3">14 Municipalities + 2 Cities</td><td class="p-3">Sorsogon City and Irosin are component cities.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Main River Systems</td><td class="p-3">Sorsogon River, Irosin River</td><td class="p-3">Primary drainage systems empty into coastal bays.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Freshwater Lakes</td><td class="p-3">Bulusan Lake, Bato Lake</td><td class="p-3">Crater and tectonic caldera formations.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Major Bays</td><td class="p-3">Sorsogon Bay, Bacon Bay, Donsol Bay</td><td class="p-3">High-yield marine ecosystems.</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Climate Classification</td><td class="p-3">Type IV Climate</td><td class="p-3">No distinct long dry or wet seasons.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Municipalities</span>
+              <h2 class="fw-bold text-earth-dark">Administrative Hubs</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Sorsogon City</h5><p class="text-muted small mb-0">Provincial capital and chief urban center, handling trade and governmental affairs.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Donsol</h5><p class="text-muted small mb-0">World-famous eco-tourism destination for whale shark interactions.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Bulusan</h5><p class="text-muted small mb-0">Entry zone to mountain lakes and old-growth natural parks.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Gubat</h5><p class="text-muted small mb-0">Prime coastal node recognized for consistent surfing breaks.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Matnog</h5><p class="text-muted small mb-0">Southern tip of Luzon, linking vehicle transit to Samar and the Visayas.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Barcelona</h5><p class="text-muted small mb-0">Quiet coastal sector preserving traditional wooden outrigger building skills.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Castilla</h5><p class="text-muted small mb-0">Known for extensive coastal fishing collectives and river systems.</p></div></div>
+              <div class="col"><div class="bg-light p-4 rounded h-100 shadow-sm border-top border-3 border-info"><h5>Irosin</h5><p class="text-muted small mb-0">Volcanic valleys, intensive agriculture, and geothermal springs.</p></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- GOVERNMENT TAB -->
+      <div class="tab-pane fade" id="government" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Administration</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Provincial Authority</h2>
+                <p class="text-muted">Sorsogon is governed by an elected executive <strong>Governor</strong> and Vice-Governor, along with legislative board members of the Sangguniang Panlalawigan (Provincial Board). Central administrative operations are headquartered in the Provincial Capitol in Sorsogon City.</p>
+                <p class="text-muted mb-0">The province forms an integral component of <strong>Region V (Bicol Region)</strong> within national executive operational structures. Individual municipalities execute targeted local ordinances managing civil defense, infrastructure, and local parks management.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/32.png" alt="Government administrative node" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-light">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Structure</span>
+              <h2 class="fw-bold text-earth-dark">Administrative Units</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="table-responsive bg-white rounded border shadow-sm">
+              <table class="table table-hover align-middle mb-0 small text-muted">
+                <thead class="table-dark text-uppercase" style="font-size: 0.75rem;">
+                  <tr><th class="p-3">Administrative Unit</th><th class="p-3">Classification</th><th class="p-3">Approx. Population</th><th class="p-3">Congressional District</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-3 fw-bold text-dark">Sorsogon City</td><td class="p-3">Component Capital City</td><td class="p-3">180,000</td><td class="p-3">2nd District</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Irosin</td><td class="p-3">Municipality</td><td class="p-3">60,000</td><td class="p-3">2nd District</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Donsol</td><td class="p-3">Municipality</td><td class="p-3">55,000</td><td class="p-3">1st District</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Gubat</td><td class="p-3">Municipality</td><td class="p-3">72,000</td><td class="p-3">2nd District</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Matnog</td><td class="p-3">Municipality</td><td class="p-3">50,000</td><td class="p-3">2nd District</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout border-start border-4 border-info p-4 bg-white rounded shadow-sm mt-5">
+              <h4 class="fw-bold text-info-emphasis">Congressional Representation</h4>
+              <p class="text-muted small mb-0">The province is split into two congressional districts: the 1st District administers northern and western coastal municipalities, while the 2nd District handles southern and eastern networks including the capital city zone. Each district elects a representative to the national Congress.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ECONOMY TAB -->
+      <div class="tab-pane fade" id="economy" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Livelihood</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Economic Overview</h2>
+                <p class="text-muted">Sorsogon's economy is anchored in <strong>agriculture, fishing, and a growing tourism sector</strong>. The province is primarily rural, with a large portion of the workforce engaged in rice and abaca farming, coconut production, and small-scale fishing along its extensive coastline.</p>
+                <p class="text-muted">Tourism — particularly eco-tourism centered on whale shark watching in Donsol — has become an increasingly important driver of income and employment.</p>
+                <p class="text-muted mb-0">The provincial government is also investing in renewable energy, given the province's volcanic and geothermal potential, and in developing special economic zones to attract industrial investment.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/24.png" alt="Sorsogon economy" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-light">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-5">
+              <span class="section-label d-block text-uppercase fw-bold mb-2">Key Sectors</span>
+              <h2 class="fw-bold text-earth-dark">Industries &amp; Livelihoods</h2>
+              <div class="section-divider bg-gold mx-auto" style="width:60px; height:3px;"></div>
+            </div>
+            <div class="table-responsive bg-white rounded shadow-sm">
+              <table class="table table-hover align-middle mb-0 small">
+                <thead class="table-dark text-uppercase" style="font-size: 0.75rem;">
+                  <tr><th class="p-3">Sector</th><th class="p-3">Key Products</th><th class="p-3">Major Areas</th><th class="p-3">Role</th></tr>
+                </thead>
+                <tbody class="text-muted">
+                  <tr><td class="p-3 fw-bold text-dark">Agriculture</td><td class="p-3">Rice, coconut, abaca, vegetables</td><td class="p-3">Irosin, Juban, Magallanes</td><td class="p-3">Primary livelihood pillar for rural households</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Fishing</td><td class="p-3">Pelagic fish, shellfish, seaweed</td><td class="p-3">Donsol, Gubat, Matnog</td><td class="p-3">Regional export and provincial food supply</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Tourism</td><td class="p-3">Whale shark interaction, surfing, trekking</td><td class="p-3">Donsol, Matnog, Bulusan</td><td class="p-3">Rapidly growing employment and revenue source</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Abaca</td><td class="p-3">Raw fiber, eco-textiles, handmade paper</td><td class="p-3">Irosin, Juban, Bulusan</td><td class="p-3">Crucial macro-export commodity globally</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Geothermal Energy</td><td class="p-3">Clean power generation</td><td class="p-3">Irosin / Bacon-Manito</td><td class="p-3">Inputs green energy to the main Luzon power grid</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- EDUCATION TAB -->
+      <div class="tab-pane fade" id="education" role="tabpanel">
+        <section class="py-5 bg-white">
+          <div class="container my-4 max-width-container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-6">
+                <span class="section-label d-block text-uppercase fw-bold mb-2">Learning &amp; Development</span>
+                <h2 class="fw-bold mb-3 text-earth-dark">Provincial Education Profile</h2>
+                <p class="text-muted">Sorsogon has a well-developed education system including public and private institutions from elementary through tertiary levels. The province achieves a literacy rate of over <strong>97%</strong> — among the highest in the entire Bicol region.</p>
+                <p class="text-muted mb-0">The Department of Education (DepEd) handles management across public elementary and secondary structures, fortified by local government unit scholarships and alternative technical training programs.</p>
+              </div>
+              <div class="col-lg-6">
+                <div class="rounded overflow-hidden shadow">
+                  <img src="images/25.png" alt="Education" class="img-fluid w-100 transform-hover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-5 bg-light">
+          <div class="container my-4 max-width-container">
+            <div class="text-center mb-4">
+              <h3 class="fw-bold text-earth-dark">Key Higher Educational Institutions</h3>
+            </div>
+            <div class="table-responsive bg-white rounded border shadow-sm">
+              <table class="table table-hover align-middle mb-0 small text-muted">
+                <thead class="table-dark text-uppercase" style="font-size: 0.75rem;">
+                  <tr><th class="p-3">Institution</th><th class="p-3">Type</th><th class="p-3">Location</th><th class="p-3">Academic Focus</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-3 fw-bold text-dark">Sorsogon State University (SSU)</td><td class="p-3">State University</td><td class="p-3">Sorsogon City</td><td class="p-3">Engineering, Agriculture, Teacher Education, Business</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Bicol University – Gubat</td><td class="p-3">State Branch Campus</td><td class="p-3">Gubat</td><td class="p-3">Agricultural Research, Fisheries</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">Saint Anthony's College</td><td class="p-3">Private Catholic College</td><td class="p-3">Sorsogon City</td><td class="p-3">Liberal Arts, Nursing, Business</td></tr>
+                  <tr><td class="p-3 fw-bold text-dark">TESDA Provincial Center</td><td class="p-3">Technical-Vocational</td><td class="p-3">Sorsogon City</td><td class="p-3">Skills training, Community livelihood programs</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div><!-- end tab-content -->
+  </main>
+
+  <footer class="site-footer pt-5 text-white-50">
+    <div class="container pt-3 max-width-container">
+      <div class="row g-4 mb-5">
+        <div class="col-xl-3 col-lg-12">
+          <a href="index.html" class="site-logo d-flex flex-column text-decoration-none mb-3">
+            <span class="logo-main text-white">Sorsogon</span>
+            <span class="logo-sub text-gold-light">Province of the Philippines</span>
+          </a>
+          <p class="small text-white-50">The southernmost province of Luzon, blessed with natural wonders, rich heritage, and warm, welcoming people.</p>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">All Destinations</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Beaches</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Mountains & Lakes</a></li>
+            <li><a href="tourism.html" class="text-white-50 text-decoration-none">Wildlife</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Culture</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Festivals</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Local Cuisine</a></li>
+            <li><a href="culture.html" class="text-white-50 text-decoration-none">Souvenirs</a></li>
+            <li><a href="gallery.html" class="text-white-50 text-decoration-none">Photo Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Province Info</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="about.html" class="text-white-50 text-decoration-none">History</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Geography</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Government</a></li>
+            <li><a href="about.html" class="text-white-50 text-decoration-none">Economy</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-3 col-md-3 col-6">
+          <h5 class="text-uppercase text-gold-light tracking-wider fw-bold mb-3 small">Travel Help</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="hotels.html" class="text-white-50 text-decoration-none">Hotels</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Transportation</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">FAQs</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact Desk</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom py-3 border-top border-secondary d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small">
+        <span>© 2026 Sorsogon Province.</span>
+        <span>Bicol Region, Philippines</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
